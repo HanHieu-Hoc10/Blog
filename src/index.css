@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.img_main {
+  height: 55px;
+}
+
+div button {
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 15px !important;
+  border-radius: 2px;
+  background-color: #009999;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+div button:hover {
+  background-color: #8ddfdf;
+  transition: 0.3s ease-in-out;
+}
+.field label:not(:last-child) {
+  display: block;
+  padding-top: 20px;
+}
+::-webkit-input-placeholder {
+  font-style: italic;
+  padding-left: 5px;
+  line-height: 15px;
+}
+
+/* Firefox 19+ */
+::-moz-placeholder {
+  font-style: italic;
+  padding-left: 5px;
+  line-height: 15px;
+}
+
+/* IE 10+ */
+:-ms-input-placeholder {
+  font-style: italic;
+  padding-left: 5px;
+  line-height: 15px;
+}
+
+/* Firefox 18- */
+:-moz-placeholder {
+  font-style: italic;
+  padding-left: 10px;
+  line-height: 15px;
+}
+.field:not(:last-child) input {
+  line-height: 15px;
+  border-radius: 20px;
+  padding: 15px 0;
+  padding-right: 100px;
+}
+.ui thead {
+  border-bottom: 1px solid #fff;
+}
+.lable {
+  font-size: 26px;
+}
