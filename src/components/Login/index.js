@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import "./Login.scss";
 
 export default function Login() {
   let navigate = useNavigate();
@@ -34,21 +35,25 @@ export default function Login() {
 
   const submit = () => {};
   return (
-    <div>
+    <div className="login_main jutify-content-center col-lg-12">
       <ToastContainer />
-      <Form className="create-form ml-5 mt-5">
-        <h1> Đăng nhập</h1>
+      <h1 class="text-center">Hello Again!</h1>
+      <Form className="needs-validation">
         <Form.Field>
-          <label>user name</label>
+          <label className="form-label">user name</label>
           <input
             placeholder="First Name"
+            className="form-control"
+            type="text"
             onChange={(e) => setuserName(e.target.value)}
           />
         </Form.Field>
         <Form.Field>
-          <label>Pass Word</label>
+          <label className="form-label">Pass Word</label>
           <input
             placeholder="Last Name"
+            className="form-control"
+            type="text"
             onChange={(e) => setPassWord(e.target.value)}
           />
         </Form.Field>

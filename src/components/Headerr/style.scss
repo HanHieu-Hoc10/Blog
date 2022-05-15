@@ -1,40 +1,76 @@
-.header {
-  overflow: hidden;
-  background-color: #f1f1f1;
-  padding: 20px 10px;
-}
-.logo {
-  font-size: 26px;
-  font-family: "tahoma";
-  padding: 15px 0;
-}
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 
-.header a {
-  float: left;
-  color: #ff7707;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 25px;
-  border-radius: 4px;
+nav {
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+  height: 50px;
+  // background: #9ec2e6;
+  border-radius: 8px;
+  font-size: 0;
+  box-shadow: 0 2px 3px 0 rgba(135, 230, 80, 0.1);
 }
-
-.header a.logo {
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.header a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.header a.active {
-  background-color: dodgerblue;
+nav a {
+  font-size: 15px;
+  text-transform: uppercase;
   color: white;
+  text-decoration: none;
+  line-height: 50px;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  text-align: center;
 }
-
-.header-right {
-  float: right;
+nav .animation {
+  position: absolute;
+  height: 100%;
+  /* height: 5px; */
+  top: 0;
+  /* bottom: 0; */
+  z-index: 0;
+  // background: #1abc9c;
+  border-radius: 8px;
+  transition: all 0.5s ease 0s;
+}
+.header_click {
+  background: #1abc9c;
+}
+nav a:nth-child(1) {
+  width: 100px;
+}
+nav .start-home,
+a:nth-child(1):hover ~ .animation {
+  width: 100px;
+  left: 0;
+}
+nav a:nth-child(2) {
+  width: 110px;
+}
+nav a:nth-child(2):hover ~ .animation {
+  width: 110px;
+  left: 100px;
+}
+nav a:nth-child(3) {
+  width: 100px;
+}
+nav a:nth-child(3):hover ~ .animation {
+  width: 100px;
+  left: 210px;
+}
+nav a:nth-child(4) {
+  width: 160px;
+}
+nav a:nth-child(4):hover ~ .animation {
+  width: 160px;
+  left: 310px;
+}
+nav a:nth-child(5) {
+  width: 120px;
+}
+nav a:nth-child(5):hover ~ .animation {
+  width: 120px;
+  left: 470px;
+}
+nav a:hover {
+  background-color: aqua;
+  transition: 0.3s ease-in-out;
 }

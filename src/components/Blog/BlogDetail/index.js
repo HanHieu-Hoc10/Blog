@@ -21,16 +21,16 @@ export default function BlogDetail() {
   }, []);
 
   const pagination = useRef();
-  console.log(pagination);
   const perPage = value.length;
-  const defultValue = _.chunk(value, 2);
+  // console.log(perPage);
+  const defultValue = _.chunk(value, 5);
   const defultt = defultValue[0];
   const setPage = ({ selected }) => {
-    const renderr = _.chunk(value, 2);
+    const renderr = _.chunk(value, 5);
     console.log("renderr", renderr[selected]);
     setShow(renderr[selected]);
   };
-  const totalPage = Math.ceil(perPage / 2);
+  const totalPage = Math.ceil(perPage / 5);
 
   //   fillter
   const postData = () => {};
@@ -43,41 +43,33 @@ export default function BlogDetail() {
   const [showPopup, setShowPopup] = useState(false);
 
   return (
-    <main>
-      {/* <div className="d-flex">
-        <input
-        placeholder="Last Name"
-          onChange={(e) => setSearchValue(e.target.value)}
-          />
-          <button onClick={postData} type="submit">
-          Submit
-          </button>
-        </div> */}
-      <Link to={"/login"}>
-        <label>First Name</label>
-      </Link>
+    <div className="container">
       {showPopup && <PopUpUpdateItem />}
-      <div className="row text-center justify-content-between">
+      <div className="row text-center ">
         {show.map((item, index) => (
           <>
-            <div className="col-lg-5 col-12 nani" key={index}>
-              <button onClick={() => onDelete(item, index)}>Delete</button>
-              <button onClick={() => setShowPopup(true)}>Sửa</button>
-              <h2 style={{ color: "#ff7707", textTransform: "uppercase" }}>
-                {item.title}
-              </h2>
-              <p>{item.content}</p>
+            <div className="col-lg-3 col-6 " key={index}>
+              <div style={{ maxWidth: "90%" }} className="nani">
+                <button onClick={() => onDelete(item, index)}>Delete</button>
+                {/* <button onClick={() => setShowPopup(true)}>Sửa</button> */}
+                <h2 style={{ color: "#ff7707", textTransform: "uppercase" }}>
+                  {item?.title}
+                </h2>
+                <p>{item?.content}</p>
+              </div>
             </div>
           </>
         ))}
         {show.length == 0 ? (
           <>
             {defultt?.map((item, index) => (
-              <div className="col-lg-5 col-12 nani" key={index}>
-                <h2 style={{ color: "#ff7707", textTransform: "uppercase" }}>
-                  {item.title}
-                </h2>
-                <p>{item.content}</p>
+              <div className="col-lg-4 col-6" key={index}>
+                <div style={{ maxWidth: "90%" }} className="nani">
+                  <h2 style={{ color: "#ff7707", textTransform: "uppercase" }}>
+                    {item?.title}
+                  </h2>
+                  <p>{item?.content}</p>
+                </div>
               </div>
             ))}
           </>
@@ -106,6 +98,6 @@ export default function BlogDetail() {
           />
         </div>
       </div>
-    </main>
+    </div>
   );
 }
