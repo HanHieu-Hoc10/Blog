@@ -17,34 +17,40 @@ export default function Register() {
     });
     toast("Đăng ký thành công");
   };
-  // useEffect(() => {}, [postData]);
   return (
-    <>
+    <div className="login_main jutify-content-center col-lg-12">
       <ToastContainer />
-      <Form className="create-form">
-        <h1>Đăng ký</h1>
+      <h1 className="text-center">Đăng ký</h1>
+      <Form className="needs-validation">
         <Form.Field>
-          <label>user name</label>
+          <label className="form-lable">user name</label>
           <input
             placeholder="User Name"
+            className="form-control"
+            type="text"
             onChange={(e) => setUserName(e.target.value)}
           />
         </Form.Field>
         <Form.Field>
-          <label>Pass Word</label>
+          <label className="form-lable">Pass Word</label>
           <input
             placeholder="Pass Word"
+            className="form-control"
             type="password"
             onChange={(e) => setPassWord(e.target.value)}
           />
         </Form.Field>
         <Form.Field>
-          <Checkbox label="Nam" onChange={(e) => setCheckBox(!checkBox)} />
+          <Checkbox
+            className="checkbox"
+            label="Nam"
+            onChange={(e) => setCheckBox(!checkBox)}
+          />
         </Form.Field>
         <Button onClick={() => postData()} type="submit">
           Đăng ký
         </Button>
       </Form>
-    </>
+    </div>
   );
 }
