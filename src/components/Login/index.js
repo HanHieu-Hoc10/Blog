@@ -11,6 +11,8 @@ export default function Login() {
   let navigate = useNavigate();
   const [userName, setuserName] = useState("");
   const [passWord, setPassWord] = useState("");
+  const [showErr, setShowErr] = useState(false);
+  const [isPassword, setIsPassword] = useState(false);
 
   const [APIData, setAPIData] = useState([]);
   useEffect(() => {
@@ -18,26 +20,36 @@ export default function Login() {
       .get(`https://61d3d3a8b4c10c001712bac1.mockapi.io/Login`)
       .then((response) => {
         setAPIData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }, []);
   const setData = () => {
-    APIData.map((item) => {
-      if (item?.userName == userName && item?.passWord == passWord) {
-        localStorage.setItem("userName", userName);
-        localStorage.setItem("passWord", passWord);
-        toast("Đăng nhập thành công");
-        navigate("blog-detail");
-      } else if (item?.userName != userName || item?.passWord != passWord) {
-        toast("Tài khoản hoặc mk không chính xác");
-      }
-    });
+    if (userName != "" && passWord != "") {
+      APIData.map((item) => {
+        if (item?.userName == userName && item?.passWord == passWord) {
+          localStorage.setItem("userName", userName);
+          localStorage.setItem("passWord", passWord);
+          navigate("blog-detail");
+        } else if (item?.userName != userName || item?.passWord != passWord) {
+          toast("Tài khoản hoặc mk không chính xác");
+          console.log("cccccc");
+        }
+      });
+    }
+    if (userName == "" || passWord == "") {
+      toast("Vui lòng điền đầy đủ thông tin");
+    }
+  };
+  const showPw = () => {
+    setIsPassword(!isPassword);
   };
 
-  const submit = () => {};
   return (
     <div className="login_main jutify-content-center col-lg-12">
       <ToastContainer />
-      <h1 class="text-center">Hello Again!</h1>
+      <h1 class="text-center">Đăng nhập</h1>
       <Form className="needs-validation">
         <Form.Field>
           <label className="form-label">user name</label>
@@ -48,23 +60,31 @@ export default function Login() {
             onChange={(e) => setuserName(e.target.value)}
           />
         </Form.Field>
-        <Form.Field>
-          <label className="form-label">Pass Word</label>
+        <Form.Field className="position-relative">
+          <label className="form-label">Pass Word </label>
+          <i
+            className={`fa cursor ${
+              isPassword ? "fa-eye monkey-bc-black" : "fa-eye-slash"
+            }`}
+            style={{ position: "absolute", bottom: "12px", right: "20px" }}
+            onClick={() => showPw()}
+          ></i>
+
           <input
             placeholder="Last Name"
             className="form-control"
-            type="text"
+            type={isPassword ? "text" : "password"}
             onChange={(e) => setPassWord(e.target.value)}
           />
         </Form.Field>
         <Button onClick={() => setData()} type="submit">
-          Submit
+          Đăng nhập
         </Button>
-        <button type="submit">
+        {/* <button type="submit">
           <Link to={"/dang-ky"} style={{ color: "#fff" }}>
             Đăng ký
           </Link>
-        </button>
+        </button> */}
       </Form>
     </div>
   );

@@ -7,3 +7,34 @@
   width: 90% !important;
   // margin-right: 5px;
 }
+#block-detail {
+  .title {
+    text-align: center;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    color: burlywood;
+    font-size: 58px;
+  }
+  h4 {
+    font-weight: bold;
+  }
+  .manyRead img {
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .manyRead p {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .text_hidden {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  @media (max-width: 668px) {
+    .text_hidden {
+      display: block;
+    }
+  }
+}

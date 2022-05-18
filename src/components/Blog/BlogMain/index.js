@@ -1,20 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import React from "react";
 import axios from "axios";
-import "./blogdetail.scss";
+import "../BlogDetail/blogdetail.scss";
 import ReactPaginate from "react-paginate";
 import { Link } from "react-router-dom";
 import _ from "lodash";
-import { useNavigate } from "react-router-dom";
 
-import PopUpUpdateItem from "./PopUpUpdateItem";
-export default function BlogDetail() {
-  // const useNavi = useNavigate();
-  // if (localStorage.getItem("userName") == "") {
-  //   useNavi("dang-nhap");
-  // }
+export default function BlogMain() {
   var _ = require("lodash");
-
   const [value, setValue] = useState([]);
   const [show, setShow] = useState([]);
   const [searchValue, setSearchValue] = useState("");

@@ -15,8 +15,11 @@ import CommentBlog from "./components/Blog/CommentBlog";
 import PostBlog from "./components/Blog/PostBlog";
 import BlogDetail from "./components/Blog/BlogDetail";
 import Register from "./components/Register";
+import BlogMain from "./components/Blog/BlogMain";
+import Login from "./components/Login";
 import * as serviceWorker from "./serviceWorker";
 // import PostBlog from "./components/Blog/PostBlog";
+const url = "";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -28,6 +31,8 @@ ReactDOM.render(
         <Route path="blog-detail" element={<BlogDetail />} />
         <Route path="dang-tin-moi" element={<PostBlog />} />
         <Route path="dang-ky" element={<Register />} />
+        <Route path="dang-nhap" element={<Login />} />
+        <Route path={`blog-detail/${url}`} element={<BlogDetail url={url} />} />
       </Routes>
     </Router>
   </React.StrictMode>,
