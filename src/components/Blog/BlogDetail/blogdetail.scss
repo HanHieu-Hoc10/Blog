@@ -1,7 +1,8 @@
 .nani {
   border-radius: 15px;
-  padding: 20px 40px;
-  background-color: rgb(235, 223, 223) !important;
+  padding: 10px 20px;
+  // background-color: rgb(235, 223, 223) !important;
+  border: 1px solid #d7d7d7;
   min-height: 150px;
   margin-top: 40px;
   width: 90% !important;
@@ -14,6 +15,7 @@
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     color: burlywood;
     font-size: 58px;
+    margin-bottom: 60px;
   }
   h4 {
     font-weight: bold;
@@ -36,5 +38,86 @@
     .text_hidden {
       display: block;
     }
+  }
+}
+.search {
+  display: flex;
+  position: absolute;
+  right: 15%;
+  top: 220px;
+  button {
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+  input {
+    width: 300px;
+    margin-top: 10px;
+  }
+}
+.comment {
+  input {
+    border: none;
+    border-bottom: 1px solid #d7d7d7;
+  }
+  padding-bottom: 100px;
+  input:focus {
+    ::before {
+      content: "comment";
+    }
+    outline: none;
+    color: #ff7707;
+    width: 300px;
+  }
+}
+.content {
+  margin-top: 15px;
+  margin-left: 40px;
+}
+.text_hidden {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  font-size: 13px;
+}
+@media (max-width: 668px) {
+  .text_hidden {
+    display: block;
+  }
+}
+.content_hidden {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 13px;
+}
+
+.chip {
+  font-size: 0.7rem;
+  background: linear-gradient(to right, #6190e8, #a7bfe8);
+  color: #fff;
+  padding: 0.3rem 0.5rem;
+  border-radius: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-transform: capitalize;
+}
+.nani:hover {
+  box-shadow: 5px 10px #d7d7d7;
+  transition: 0.3s ease-in-out;
+}
+@media screen and (max-width: 800px) {
+  .detail-img {
+    height: 100px !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .search {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 10px;
   }
 }

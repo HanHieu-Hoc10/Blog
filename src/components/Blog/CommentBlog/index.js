@@ -2,11 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import React from "react";
 import axios from "axios";
 import "../BlogDetail/blogdetail.scss";
-// import ReactPaginate from "react-paginate";
 import ReactPaginate from "react-paginate";
 import { Link } from "react-router-dom";
 import _ from "lodash";
-// import PopUpUpdateItem from "./PopUpUpdateItem";
 
 export default function CommentBlog() {
   var _ = require("lodash");
@@ -47,36 +45,22 @@ export default function CommentBlog() {
 
   return (
     <main>
-      {/* <div className="d-flex">
-        <input
-        placeholder="Last Name"
-          onChange={(e) => setSearchValue(e.target.value)}
-          />
-          <button onClick={postData} type="submit">
-          Submit
-          </button>
-        </div> */}
       <Link to={"/login"}>
         <label>First Name</label>
       </Link>
-      {/* {showPopup && <PopUpUpdateItem />} */}
       <div className="row text-center justify-content-between">
         {show.map((item, index) => (
-          <>
-            <div className="col-lg-5 col-12 nani" key={index}>
-              {/* <button onClick={() => onDelete(index)}>Delete</button>
-              <button onClick={() => setShowPopup(true)}>Sửa</button> */}
-              <h2 style={{ color: "#ff7707", textTransform: "uppercase" }}>
-                {item.title}
-              </h2>
-              <p>{item.content}</p>
-              <label style={{ fontSize: "13px" }}>
-                Nhập nội dung comment
-              </label>{" "}
-              <br />
-              <input onChange={(e) => setContentCm(e.target.value)} />
-            </div>
-          </>
+          <div className="col-lg-5 col-12 nani" key={index}>
+            <h2 style={{ color: "#ff7707", textTransform: "uppercase" }}>
+              {item.title}
+            </h2>
+            <p>{item.content}</p>
+            <label style={{ fontSize: "13px" }}>
+              Nhập nội dung comment
+            </label>{" "}
+            <br />
+            <input onChange={(e) => setContentCm(e.target.value)} />
+          </div>
         ))}
         {show.length == 0 ? (
           <>

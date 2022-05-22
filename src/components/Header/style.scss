@@ -1,0 +1,67 @@
+$myLinkto: #151515;
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  .userName {
+    font-size: 20px;
+    color: $myLinkto;
+  }
+}
+.header-login,
+.header-register {
+  border: 1px solid $myLinkto;
+  a {
+    color: #333;
+  }
+}
+.header-login:hover,
+.header-register:hover {
+  border: 1px solid #ff7707;
+  background-color: #ff7707;
+  transition: 0.3s ease-in-out;
+  a {
+    color: #fff;
+  }
+}
+
+.headerMenu a {
+  display: inline-block;
+  margin: 0 10px;
+  text-decoration: none;
+  color: #565673;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+}
+.headerMenu a:hover {
+  color: #5f9ea0;
+}
+.header-logo {
+  text-align: center;
+  background-color: #fff;
+  p {
+    font-family: "Dancing Script", cursive;
+    font-size: 25px;
+    text-decoration: none;
+    color: #333;
+  }
+}
+.header-name {
+  border-bottom: 1px solid #151515;
+}
+.header-logout {
+  margin-left: 20px !important;
+  margin-top: 15px;
+  left: 0;
+  li {
+    font-size: 15px;
+    list-style: none;
+    cursor: pointer;
+    padding-top: 10px;
+    border-bottom: 1px solid #333;
+  }
+  li:hover {
+    color: #ff7707;
+    transition: 0.3s ease-in-out;
+  }
+}

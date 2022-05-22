@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import "./Blog.scss";
 import App from "./App";
 import {
   BrowserRouter as Router,
@@ -19,20 +20,23 @@ import BlogMain from "./components/Blog/BlogMain";
 import Login from "./components/Login";
 import * as serviceWorker from "./serviceWorker";
 // import PostBlog from "./components/Blog/PostBlog";
-const url = "";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <App />
       <Routes>
-        <Route path="binh-luan" element={<CommentBlog />} />
-        <Route path="bai-dang" element={<AllPosts />} />
-        <Route path="blog-detail" element={<BlogDetail />} />
-        <Route path="dang-tin-moi" element={<PostBlog />} />
-        <Route path="dang-ky" element={<Register />} />
-        <Route path="dang-nhap" element={<Login />} />
-        <Route path={`blog-detail/${url}`} element={<BlogDetail url={url} />} />
+        <Route path="/binh-luan" element={<CommentBlog />} />
+        <Route path="/bai-dang" element={<AllPosts />} />
+        <Route path="/blog-detail" element={<BlogDetail />} />
+        <Route path="/dang-tin-moi" element={<PostBlog />} />
+        <Route path="/dang-ky" element={<Register />} />
+        <Route path="/dang-nhap" element={<Login />} />
+        <Route path="blog-detail/:id" element={<BlogMain />} />
+        {/* <Route
+          path="/detail/:id"
+          children={({ match }) => <BlogMain match={match} />}
+        /> */}
       </Routes>
     </Router>
   </React.StrictMode>,

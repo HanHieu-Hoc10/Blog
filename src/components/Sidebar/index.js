@@ -2,11 +2,6 @@ import React, { useState, useEffect } from "react";
 import blogPost from "../../data/blog.json";
 import { NavLink } from "react-router-dom";
 
-/**
- * @author
- * @function Sidebar
- **/
-
 const Sidebar = (props) => {
   const [posts, setPosts] = useState([]);
 
